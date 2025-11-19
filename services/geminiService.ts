@@ -2,8 +2,10 @@ import { GoogleGenAI, Chat } from "@google/genai";
 import { PROFILE, SKILLS, EXPERIENCE, PROJECTS } from "../constants";
 
 // Initialize the client
-// NOTE: In a real deployment, ensure process.env.API_KEY is set in Vercel/Netlify
-const apiKey = process.env.API_KEY || ''; 
+// CRITICAL FOR VERCEL: Vite exposes env vars via import.meta.env and they must be prefixed with VITE_
+// We check both methods to ensure compatibility with different build tools.
+const apiKey = (import.meta as any).env?.VITE_API_KEY || process.env.API_KEY || ''; 
+
 const ai = new GoogleGenAI({ apiKey });
 
 // Construct a system prompt based on the portfolio data
@@ -31,7 +33,7 @@ let chatSession: Chat | null = null;
 
 export const startChat = (): Chat => {
   if (!apiKey) {
-    console.warn("Gemini API Key not found");
+    console.warn("Gemini API Key not found. Please set VITE_API_KEY in your environment variables.");
   }
   
   chatSession = ai.chats.create({
@@ -48,13 +50,21 @@ export const sendMessageToGemini = async (message: string): Promise<string> => {
   if (!chatSession) {
     startChat();
   }
-  if (!chatSession) return "Lo siento, no puedo conectar con la IA en este momento (Falta API Key).";
+  
+  // If still no session (likely due to missing API key handling in strict environments), try one last init or fail gracefully
+  if (!chatSession && apiKey) {
+      startChat();
+  }
+
+  if (!apiKey) return "Error de configuración: No se detectó la API Key (VITE_API_KEY).";
 
   try {
+    if (!chatSession) return "Error iniciando sesión de chat.";
+    
     const result = await chatSession.sendMessage({ message });
     return result.text || "No pude generar una respuesta.";
   } catch (error) {
     console.error("Error sending message to Gemini:", error);
-    return "Hubo un error al procesar tu solicitud. Por favor intenta más tarde.";
+    return "Hubo un error al conectar con la IA. Por favor intenta más tarde.";
   }
 };

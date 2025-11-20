@@ -72,12 +72,13 @@ export const PROJECTS: Project[] = [
     title: "E-commerce Teclados Mecánicos",
     description: "Plataforma web de venta de teclados premium. Incluye catálogo dinámico, filtros avanzados, carrito de compras persistente y diseño totalmente responsive.",
     tags: ["Next.js", "React", "Tailwind", "Vercel"],
-    // Updated paths: removed leading slash
-    imageUrl: "assets/Keyboards/home.png", 
+    // Updated with provided S3 link (HTTPS format)
+    imageUrl: "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191611.png", 
     gallery: [
-      "assets/Keyboards/home.png",
-      "assets/Keyboards/catalog.png",
-      "assets/Keyboards/detail.png"
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191611.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191644.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191720.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191735.png"
     ],
     workflow: [
       { 
@@ -294,13 +295,21 @@ Este proyecto es privado y está protegido por derechos de autor.
     title: "Sistema POS - Cataleya Swimwear",
     description: "Punto de venta integral basado en la nube. Permite gestión de inventario en tiempo real, control de ventas, administración de catálogo multimedia y reportes analíticos.",
     tags: ["React", "Node.js", "Express", "AWS S3", "PostgreSQL"],
-    // Updated paths: removed leading slash
-    imageUrl: "assets/Swimwear/dashboard.png",
+    // Updated to provided S3 link (HTTPS format)
+    imageUrl: "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191305.png",
     gallery: [
-      "assets/Swimwear/dashboard.png",
-      "assets/Swimwear/products.png",
-      "assets/Swimwear/pos.png",
-      "assets/Swimwear/sales.png"
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191305.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191112.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191131.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191146.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191152.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191238.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191250.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191043.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191305.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191316.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191352.png",
+      "https://cataleya-pos-images.s3.amazonaws.com/Captura%20de%20pantalla%202025-11-18%20191415.png"
     ],
     workflow: [
       { 
@@ -328,7 +337,7 @@ Este proyecto es privado y está protegido por derechos de autor.
     github: "https://github.com/brayanzarui-wq/mi-pos-frontend",
     githubBackend: "https://github.com/brayanzarui-wq/mi-pos-backend",
     isPrivate: true,
-    manualUrl: "https://cataleya-pos-images/Sistema POS Swimwear.pdf", // Updated path
+    manualUrl: "https://cataleya-pos-images.s3.amazonaws.com/Sistema%20POS%20Swimwear.pdf", // Updated path to S3
     readmeContent: `
 # Sistema POS - Cataleya Swimwear 👙
 
@@ -704,72 +713,4 @@ const productSchema = Joi.object({
 
 \`\`\`bash
 # Clonar repositorio
-git clone https://github.com/brayanzarui-wq/mi-pos-backend.git
-
-# Instalar dependencias
-npm install
-
-# Configurar variables de entorno
-cp .env.example .env
-# Editar .env con credenciales
-
-# Ejecutar migraciones
-npm run migrate
-
-# Iniciar servidor de desarrollo
-npm run dev
-
-# Compilar para producción
-npm run build
-npm start
-\`\`\`
-
-### Frontend
-
-\`\`\`bash
-# Clonar repositorio
-git clone https://github.com/brayanzarui-wq/mi-pos-frontend.git
-
-# Instalar dependencias
-npm install
-
-# Configurar API endpoint
-# Editar src/services/api.js
-
-# Iniciar en desarrollo
-npm run dev
-
-# Build de producción
-npm run build
-\`\`\`
-
-## 📈 Métricas y Performance
-
-- **Tiempo de respuesta API:** < 200ms (promedio)
-- **Uptime:** 99.5%
-- **Usuarios concurrentes:** Soporta hasta 50
-- **Tamaño de bundle:** ~300KB (gzipped)
-
-## 🔜 Roadmap de Mejoras
-
-- [ ] Implementar sistema de roles más granular (permisos específicos)
-- [ ] Agregar módulo de reportes avanzados con filtros por fecha
-- [ ] Integración con impresora térmica para tickets
-- [ ] App móvil con React Native
-- [ ] Sistema de notificaciones push para bajo stock
-- [ ] Dashboard con métricas en tiempo real (WebSockets)
-- [ ] Exportación de reportes a PDF/Excel
-- [ ] Sistema de devoluciones y notas de crédito
-
-## 👨‍💻 Autor
-
-**Brayan Zarui**  
-Desarrollador de Aplicaciones - Iteradapta  
-Estudiante de Ingeniería en Sistemas Computacionales
-
-## 📄 Licencia y Confidencialidad
-
-Este proyecto está sujeto a acuerdos de confidencialidad (NDA) con Cataleya Swimwear. El código fuente es privado y está protegido por derechos de autor. La información aquí presentada es únicamente con fines demostrativos de capacidades técnicas.
-    `
-  }
-];
+git clone https://github.com

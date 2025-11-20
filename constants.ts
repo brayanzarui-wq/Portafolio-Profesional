@@ -328,7 +328,7 @@ Este proyecto es privado y está protegido por derechos de autor.
     github: "https://github.com/brayanzarui-wq/mi-pos-frontend",
     githubBackend: "https://github.com/brayanzarui-wq/mi-pos-backend",
     isPrivate: true,
-    manualUrl: "assets/Swimwear/manual.pdf", // Updated path
+    manualUrl: "https://cataleya-pos-images/Sistema POS Swimwear.pdf", // Updated path
     readmeContent: `
 # Sistema POS - Cataleya Swimwear 👙
 

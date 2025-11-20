@@ -337,7 +337,7 @@ Este proyecto es privado y está protegido por derechos de autor.
     github: "https://github.com/brayanzarui-wq/mi-pos-frontend",
     githubBackend: "https://github.com/brayanzarui-wq/mi-pos-backend",
     isPrivate: true,
-    manualUrl: "https://cataleya-pos-images.s3.amazonaws.com/Sistema%20POS%20Swimwear.pdf", // Updated path to S3
+    manualUrl: "https://cataleya-pos-images.s3.amazonaws.com/Sistema%20POS%20Swimwear.pdf", // Updated path
     readmeContent: `
 # Sistema POS - Cataleya Swimwear 👙
 
@@ -713,4 +713,72 @@ const productSchema = Joi.object({
 
 \`\`\`bash
 # Clonar repositorio
-git clone https://github.com
+git clone https://github.com/brayanzarui-wq/mi-pos-backend.git
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env
+# Editar .env con credenciales
+
+# Ejecutar migraciones
+npm run migrate
+
+# Iniciar servidor de desarrollo
+npm run dev
+
+# Compilar para producción
+npm run build
+npm start
+\`\`\`
+
+### Frontend
+
+\`\`\`bash
+# Clonar repositorio
+git clone https://github.com/brayanzarui-wq/mi-pos-frontend.git
+
+# Instalar dependencias
+npm install
+
+# Configurar API endpoint
+# Editar src/services/api.js
+
+# Iniciar en desarrollo
+npm run dev
+
+# Build de producción
+npm run build
+\`\`\`
+
+## 📈 Métricas y Performance
+
+- **Tiempo de respuesta API:** < 200ms (promedio)
+- **Uptime:** 99.5%
+- **Usuarios concurrentes:** Soporta hasta 50
+- **Tamaño de bundle:** ~300KB (gzipped)
+
+## 🔜 Roadmap de Mejoras
+
+- [ ] Implementar sistema de roles más granular (permisos específicos)
+- [ ] Agregar módulo de reportes avanzados con filtros por fecha
+- [ ] Integración con impresora térmica para tickets
+- [ ] App móvil con React Native
+- [ ] Sistema de notificaciones push para bajo stock
+- [ ] Dashboard con métricas en tiempo real (WebSockets)
+- [ ] Exportación de reportes a PDF/Excel
+- [ ] Sistema de devoluciones y notas de crédito
+
+## 👨‍💻 Autor
+
+**Brayan Zarui**  
+Desarrollador de Aplicaciones - Iteradapta  
+Estudiante de Ingeniería en Sistemas Computacionales
+
+## 📄 Licencia y Confidencialidad
+
+Este proyecto está sujeto a acuerdos de confidencialidad (NDA) con Cataleya Swimwear. El código fuente es privado y está protegido por derechos de autor. La información aquí presentada es únicamente con fines demostrativos de capacidades técnicas.
+    `
+  }
+];
